@@ -1,22 +1,21 @@
 Instagram Challenge
 ===================
 
-Instructions
+Overview
 -------
-* Challenge time: Friday, the entire day + the weekend if you need it
-* Feel free to use Google, your notes, books, etc., but work on your own
-* You must submit a pull request to this repo with your challenge solution (or partial solution) by 9AM Monday morning.
+* Having spent the week learning how to use Rails, we were tasked with building a website which had the basic functionality of an instagram clone.
+* This was a chance to practice: database associations, user authentication, styling and basic jquery
+* I enjoyed this challenge in particular, databases are both frustrating and fascinating and building a fully tested web app that bore similarities to Instagram was incredibly satisfying.
 
-Task
+To take a look...
 -----
 
-Build Instagram: Simple huh!
+```
+git clone https://github.com/Kyvyas/instagram-challenge.git
+cd instagram-challenge
+bundle
+rake db:create
+rake db:migrate
+rails s
+```
 
-As usual please start by
-
-* Filling out your learning plan self review for the week: https://github.com/makersacademy/learning_plan (if you haven't already)
-* Forking this repo. After cloning your fork and cd'ing into it, you'll need to [initialize a Rails app in the current directory](http://blog.jasonmeridth.com/posts/create-rails-application-in-current-directory/).
-
-Your challenge is to build Instagram using Rails. You'll need **users** who can post **pictures**, write **comments** on pictures and **like** a picture. Style it like Instagram's website (or more awesome).
-
-Bonus if you can add filters!
