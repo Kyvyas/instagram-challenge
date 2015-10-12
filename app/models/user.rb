@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
+  validates :username, presence: true, length: {minimum: 4, maximum: 16}
 
   has_many :photos
   has_many :comments
