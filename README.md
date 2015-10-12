@@ -19,3 +19,8 @@ rake db:migrate
 rails s
 ```
 
+...and to run tests:
+```
+rspec
+```
+
