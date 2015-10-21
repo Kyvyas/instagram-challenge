@@ -8,21 +8,29 @@
     = csrf_meta_tags
 
   %body
-    %div.navbar.navbar-default.navbar-static-top
-      %div.container
-        %ul.nav.navbar-nav.header_menu
+    %nav.navbar.navbar-default
+      .navbar-container
+        .navbar-header
+          %button.navbar-toggle.collapsed{"data-target" => "#bs-navbar-collapse-1", "data-toggle" => "collapse", type: "button"}
+            %span.sr-only Toggle Navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
           %a.navbar-brand{:href => "/"}
             %i.ion-images
             InstaClone
-          - if current_user
-            %li
-              %a{:href => "/"} Welcome, #{current_user.username}
-          - if user_signed_in?
-            %li= link_to "Sign out", destroy_user_session_path, method: :delete
-          - else
-            %li= link_to "Sign in", new_user_session_path
-            %li= link_to "Sign up", new_user_registration_path
-            %li= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
+        .collapse.navbar-collapse#bs-navbar-collapse-1
+          %ul.nav.navbar-nav.navbar-right
+            - if current_user
+              %li
+                %a{:href => "/"} Welcome, #{current_user.username}
+            - if user_signed_in?
+              %li= link_to "Sign out", destroy_user_session_path, method: :delete
+            - else
+              %li= link_to "Sign in", new_user_session_path
+              %li= link_to "Sign up", new_user_registration_path
+              %li= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
+
 
     %p.notice= notice
     %p.alert= alert
